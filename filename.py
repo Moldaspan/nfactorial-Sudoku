@@ -172,8 +172,8 @@ class Board:
 							print("solved")
 							end_time = pygame.time.get_ticks()
 							time_taken = (end_time - start_time) / 1000
-							with open('results.json', 'r') as f:
-								results = json.load(f)
+							f = open('results.json')
+							results = json.load(f)
 							if time_taken > results[temp]:
 								results[temp] = time_taken
 							with open('results.json', 'w') as f:
